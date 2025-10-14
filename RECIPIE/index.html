@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/recipes.css">
+</head>
+<body>
+
+    <h1>RECIPIES</h1>
+    <br>
+    <div class="addition">
+        <form  action="http://localhost:8080/recipes/new">
+            <button class="Add_btn"><i class="fa-solid fa-plus"></i></button>
+        </form>
+        <br><br>
+    </div>
+
+    <div>
+        <%for(let recipe of recipes){%>
+            <div class="recipe">
+                
+                <h2>Name: <%= recipe.name %></h2>
+                <h4>Cusine: <%= recipe.cuisine %></h4>
+                <h4>CookTime: <%= recipe.cookTime %></h4>
+                <h4>Servings: <%= recipe.servings %></h4>
+                <ul>
+                    <h3>ingredients required</h3>
+                    <br>
+                <%for(let ingredient of recipe.ingredients){%>
+                    <li><h5><%= ingredient %></h5></li>
+                <%}%>
+                </ul>
+                <br>
+                <br>
+                <ul>
+                    <h3>Steps</h3>
+                    <br>
+                <%for(step of recipe.steps){%>
+                    <li><h5><%= step %></h5></li>
+                <%}%>
+                </ul>
+                <br>        
+                <form action="http://localhost:8080/recipes/<%= recipe.id %>"><button>Detail</button></form>
+                <br>
+                </div>
+                <br><br>
+            <%}%>
+    </div>
+
+
+    
+</body>
+</html>
