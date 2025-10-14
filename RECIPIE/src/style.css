@@ -94,8 +94,6 @@ footer{
     background:var(--background-1);
 }
 
-
-
 .container{
     display:flex;
     gap:2em;
@@ -194,7 +192,7 @@ input{
   background:white;
   padding:0.5em;
   border:#4751a9 2px solid;
-  border-radius: 5px;
+  border-radius: 100px;
 }
 
 .footer-content{
